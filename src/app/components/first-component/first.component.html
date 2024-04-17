@@ -1,0 +1,31 @@
+<section class="first-section">
+    <div class="questionnaire">
+        <h1>Cuestionario</h1>
+        <div>
+            <div>
+                <label for="name">Name: </label>
+                <input id="name" type="text" [formControl]="name">
+            </div>
+            <div>
+                <span> Value name: {{name.value}}</span>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label for="surname">Surname: </label>
+                <input id="surname" type="text" [formControl]="surname">
+            </div>
+            <div>
+                <span> Value surname: {{surname.value}}</span>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <button type="button" (click)="updateName()">Update Name</button>
+        </div>
+        <div>
+            <button type="button" (click)="initForms()">Init values</button>
+        </div>
+    </div>
+</section>
+
