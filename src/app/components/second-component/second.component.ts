@@ -2,8 +2,7 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: 'second-component',
-    templateUrl: './second.component.html',
-    styleUrls: ['./second.component.scss']
+    templateUrl: './second.component.html'
 })
 export class SecondComponent {
     
