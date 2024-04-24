@@ -1,15 +1,18 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiNpms } from "src/app/models/api-npms.model";
 import { FirstService } from "src/app/services/first.service";
+import { StreamingAvailabilityService } from "src/app/services/streaming-availability.service";
 
 @Component({
     selector: 'second-component',
-    templateUrl: './second.component.html'
+    templateUrl: './second.component.html',
+    styleUrls: ['./second.component.scss']
 })
 export class SecondComponent implements OnInit {
     
     constructor(
-        private firstService: FirstService
+        private firstService: FirstService,
+        private streamingService: StreamingAvailabilityService
     ) {}
 
     ngOnInit(): void {
@@ -27,5 +30,19 @@ export class SecondComponent implements OnInit {
         const data: ApiNpms = await this.firstService.getInfoPromise();
         console.log(data)
         console.log('getInfoPromise')
+    }
+
+    getCountries = (): void => {
+        this.streamingService.getCountries().subscribe((data) => {
+            console.log(data)
+            console.log('getCountries')
+        })
+    }
+
+    getGenres = (): void => {
+        this.streamingService.getGenres().subscribe((data) => {
+            console.log(data)
+            console.log('getGenres')
+        })
     }
 }

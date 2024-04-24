@@ -6,7 +6,7 @@ import { Observable, lastValueFrom } from "rxjs";
 @Injectable()
 export class FirstService {
 
-    heroesURL: string = 'https://api.npms.io/v2/search?q=scope:angular';
+    url: string = 'https://api.npms.io/v2/search?q=scope:angular';
     totalAngularPackages: any;
     errorMessage: any;
     
@@ -15,14 +15,14 @@ export class FirstService {
     ) {}
 
     getInfoApiNpms = (): void => {
-        this.http.get<ApiNpms>(this.heroesURL).subscribe((data) => {
+        this.http.get<ApiNpms>(this.url).subscribe((data) => {
             this.totalAngularPackages = data.total;
             console.log('getInfoApiNpms');
         })
     }
 
     getInfoApiNpmsWithErrors = (): void => {
-        this.http.get<ApiNpms>(this.heroesURL).subscribe({
+        this.http.get<ApiNpms>(this.url).subscribe({
             next: data => {
                 this.totalAngularPackages = data.total;
                 console.log('getInfoApiNpmsWithErrors');
@@ -34,7 +34,7 @@ export class FirstService {
     }
     
     getInfoObservable = (): Observable<ApiNpms> => {
-        return this.http.get<ApiNpms>(this.heroesURL);
+        return this.http.get<ApiNpms>(this.url);
     }
 
     getInfoPromise = (): Promise<ApiNpms>  => {
