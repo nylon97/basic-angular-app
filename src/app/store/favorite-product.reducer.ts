@@ -2,7 +2,9 @@ import { createReducer, on } from '@ngrx/store';
 import { add, remove, updateAllState, clear } from './favorite-product.actions';
 import { AppState } from '../models/app-state.model';
 
-export const initialState: AppState = {
+export const initialState: AppState = localStorage.getItem('addFavoriteProduct') ? 
+JSON.parse(localStorage.getItem('addFavoriteProduct') || '') : 
+{
     products: [],
 };
 
