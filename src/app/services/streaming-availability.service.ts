@@ -8,7 +8,7 @@ export class StreamingAvailabilityService {
 
     url: string = 'https://streaming-availability.p.rapidapi.com';
     headers: HttpHeaders = new HttpHeaders({
-        'X-RapidAPI-Key': 'b1e5b305bfmsh7573c9a87f5ab3fp1c0f97jsnaab0c0517d56',
+        'X-RapidAPI-Key': 'your-api-key',
 		'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     });
     

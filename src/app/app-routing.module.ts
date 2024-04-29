@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'first-component', loadChildren: () => import('src/app/components/first-component/first-routing.module').then(m => m.FirstRoutingModule) },
   { path: 'second-component', loadChildren: () => import('src/app/components/second-component/second-routing.module').then((m) => m.SecondRoutingModule) },
+  { path: 'third-component', loadChildren: () => import('src/app/components/third-component/third-routing.module').then((m) => m.ThirdRoutingModule) },
   { path: '**', loadChildren: () => import('src/app/components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) }
 ];
 
