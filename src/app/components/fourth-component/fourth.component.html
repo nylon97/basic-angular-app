@@ -1,0 +1,25 @@
+<div>
+    FourthComponent
+</div>
+<div class="left">
+    <input #id type="number" placeholder="Id" />
+    <input #name type="text" placeholder="Name" />
+    <button (click)="addProductToFavorites(id.value, name.value)">Crear Tarea</button>
+</div>
+<div>
+    <p>Número de estados de productos: {{(favoritesProducts | async)?.length}}</p>
+</div>
+<table class="table table-hover" *ngIf="(favoritesProducts | async)?.length != 0">
+    <thead>
+        <tr>
+            <td>Product Id</td>
+            <td>Product Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of favoritesProducts | async">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+        </tr>
+    </tbody>
+</table>

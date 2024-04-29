@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
 import { CustomDatePipe } from './pipes/custom-date.pipe';
+import { StoreModule } from '@ngrx/store';
+import { favoriteReducer } from './store/favorite-product.reducer';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { CustomDatePipe } from './pipes/custom-date.pipe';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    CustomDatePipe
+    CustomDatePipe,
+    StoreModule.forRoot({favorite: favoriteReducer}),
   ],
   exports: [
     CommonModule,
