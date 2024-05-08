@@ -1,10 +1,23 @@
-<section class="header">
-    <a routerLink="first-component">Cuestionario</a>
-    <a routerLink="second-component">Services</a>
-    <a routerLink="third-component">Pipes</a>
-    <a routerLink="fourth-component">States</a>
-    <span>My application</span>
-</section>
+<mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon" >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="'first-component'">
+          <span>Cuestionario</span>
+        </button>
+        <button mat-menu-item [routerLink]="'second-component'">
+          <span>Services</span>
+        </button>
+        <button mat-menu-item [routerLink]="'third-component'">
+          <span>Pipes</span>
+        </button>
+        <button mat-menu-item [routerLink]="'fourth-component'">
+            <span>States</span>
+        </button>
+    </mat-menu>
+    <span>My angular application</span>
+</mat-toolbar>
 
 <!-- <nav>
     <ul>
