@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'third-component', loadChildren: () => import('src/app/components/third-component/third-routing.module').then((m) => m.ThirdRoutingModule) },
   { path: 'fourth-component', loadChildren: () => import('src/app/components/fourth-component/fourth-routing.module').then((m) => m.FourthRoutingModule) },
   // { path: 'fourth-component', component: FourthComponent },
+  { path: 'chart-component', loadChildren: () => import('src/app/components/chart-component/chart.module').then(m => m.ChartModule)},
   { path: '**', loadChildren: () => import('src/app/components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule) }
 ];
 

@@ -1,0 +1,56 @@
+<div>
+  <h1>1. Charts bar horizontal</h1>
+  <ngx-charts-bar-horizontal
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="single"
+    [gradient]="horizontalBarModel.gradient"
+    [xAxis]="horizontalBarModel.showXAxis"
+    [yAxis]="horizontalBarModel.showYAxis"
+    [legend]="horizontalBarModel.showLegend"
+    [showXAxisLabel]="horizontalBarModel.showXAxisLabel"
+    [showYAxisLabel]="horizontalBarModel.showYAxisLabel"
+    [xAxisLabel]="horizontalBarModel.xAxisLabel"
+    [yAxisLabel]="horizontalBarModel.yAxisLabel"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)">
+  </ngx-charts-bar-horizontal>
+</div>
+<div>
+  <h1>2. Pie chart</h1>
+  <ngx-charts-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="single"
+    [gradient]="pieModel.gradient"
+    [legend]="pieModel.showLegend"
+    [legendPosition]="pieModel.legendPosition"
+    [labels]="pieModel.showLabels"
+    [doughnut]="pieModel.isDoughnut"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    >
+  </ngx-charts-pie-chart>
+</div>
+<div class="line_chart">
+  <h1>3. Line chart</h1>
+  <ngx-charts-line-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [legend]="lineModel.legend"
+    [showXAxisLabel]="lineModel.showXAxisLabel"
+    [showYAxisLabel]="lineModel.showYAxisLabel"
+    [xAxis]="lineModel.xAxis"
+    [yAxis]="lineModel.yAxis"
+    [xAxisLabel]="lineModel.xAxisLabel"
+    [yAxisLabel]="lineModel.yAxisLabel"
+    [timeline]="lineModel.timeline"
+    [results]="multi"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    >
+  </ngx-charts-line-chart>
+</div>
